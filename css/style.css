@@ -1,0 +1,204 @@
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+
+/* Paso 1: Declarar cada área para el contenedor. */
+header
+{
+	grid-area: header;
+	background-color: #198754;
+}
+
+nav
+{
+	grid-area: nav;
+	background-color: #25527B;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+
+body
+{
+	/*grid-area: body;*/
+	background-color: blue;
+}
+
+aside
+{
+	grid-area: aside;
+	background-color: #132a3f;
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: top;
+	color: white;
+	padding: 1rem;
+    overflow-y: auto;
+}
+
+main
+{
+	grid-area: main;
+	background-color: #132a3f;
+}
+
+footer
+{
+	grid-area: footer;
+	background-color: #3677b5;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+button
+{
+	width: 100%;
+	color: white;
+	background-color: #25527B;
+	border-color: #25527B;
+    align-self: stretch;
+}
+
+
+
+
+.navbar
+{
+	font-size: 48px;
+	color: white;
+}
+
+.product-list
+{
+	color: #929497;
+	font-weight: lighter;
+	display: flex;
+    flex-direction: column;
+	align-items: flex-start;
+	justify-content: top;
+	margin-top: 2px;
+	white-space: wrap;
+	font-size: clamp(0.7rem, 3vw, 1.3rem);
+	line-height: 1.1;
+}
+
+.category
+{
+    text-align: center;
+    padding: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+	margin-top: 2px;
+}
+
+/* Paso 2: Activar el grid del contenedor */
+.layout-container
+{
+	display: grid;
+
+	grid-template-areas:
+	/* Paso 3: Dibujar el layout del sitio web */
+	"nav nav" /* Repetimos el header para que use 2 columnas */
+	"aside main" /* Agregamos el aside a la izquierda y el main a la derecha */
+	"footer footer"; /* Repetimos el footer para que use 2 columnas */
+	/* Paso 4: Damos altura */	
+	grid-template-rows: 10vh 1fr 5vh;
+	/* Paso 5: Dar ancho para las columnas. */
+	grid-template-columns: 10vw 90vw;
+}
+
+/* Descubrí que mi monitor es de 4K y por eso mis tarjetas se ven mas gordas que un perrito gloton */
+.grid-container
+{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Probar con 6 u 8 en monitores de 4K */
+	background-color: #47627b;
+	margin: 0.5rem;
+}
+
+.item
+{
+	background-color: #718ba2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	align-items: space-evenly;
+	gap: 10px;
+	border-radius: 10px;
+	margin: 5px;
+    justify-content: space-between;
+}
+
+.item-title
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    line-height: 1.2;	
+    white-space: wrap;
+    width: 100%;    
+    /* La función 'clamp' permite que hayan límites en una clase, dando un tamaño de texto mínimo y otro máximo según la cantidad de texto */
+    font-size: clamp(0.7rem, 3vw, 1.3rem);
+}
+
+.price
+{
+	font-size: 1rem;
+	font-weight: lighter;
+}
+
+.product-image
+{
+	max-width: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Paso 2: Activar el grid del contenedor */
+
+/* /* La condición pide que el ancho mínimo de la pantalla sea hasta 575 pixeles, es decir, esté entre los 0 y 575 pixeles. */
+/* @media (max-width: 575px)
+{
+	/* Se crea una clase de la misma forma que se ha hecho siempre, solo está contenida adentro de la condición. */
+/* 	.layout-container
+	{ */
+		/* Necesitamos una estructura de grilla para la tienda. */
+	/* 	display: grid; */
+		/* Paso 3: Dibujar el layout del sitio web */
+		/* Áreas de la grilla */
+/* 		grid-template-areas: */
+	/* 		"header"
+			"aside"			
+			"main"
+			"aside"
+			"footer"; */
+		/* Paso 4: Damos altura */	
+		/* Dimensiones de la grilla, se puede usar fr para adaptar una fila */
+		/* grid-template-rows: 10vh, 20vh, 50vh, 10vh, 10vh; */
+		/* Paso 5: Dar ancho para las columnas. */
+		/* Dimensiones de la columna, 1fr permite adaptar una columna completa */
+		/* grid-template-columns: 1fr; */
+/* 	} * *//
+/* } */ 
